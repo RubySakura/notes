@@ -305,5 +305,6 @@ setTimeout(function() {
 
 
 ## 参考文章
-[带你彻底弄懂Event Loop](https://segmentfault.com/a/1190000016278115)
+- [带你彻底弄懂Event Loop](https://segmentfault.com/a/1190000016278115)
+- [一次弄懂Event Loop（彻底解决此类面试问题）](https://juejin.cn/post/6844903764202094606)
 
