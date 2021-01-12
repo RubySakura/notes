@@ -1,8 +1,11 @@
-var userInput = document.querySelector('#username');
-userInput.value = "b";
-console.log( userInput.value );                  // "b"
-console.log( userInput.getAttribute('value'));   // "a"
-userInput.setAttribute('value', 'c'); 
-console.log( userInput.value );                  // "b"
-console.log( userInput.getAttribute('value'));   // "c"
-console.log( document.body.innerHTML ) ;  // <input id="username" type="text" sex="male" age=28 value="c">
+function Foo() {};
+Foo.prototype.a = 1;
+Foo.prototype.b = function() {console.log('b')};
+
+var foo = new Foo();
+foo.c = 2;
+
+for(let key in foo) {
+    console.log('key', key);
+    console.log(foo[key]);
+}
