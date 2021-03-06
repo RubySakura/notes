@@ -1,26 +1,15 @@
-function myNew() {
-  // 首先将参数变换为数组，并取出第0项，即构造函数
-  const args = [...arguments];
-  const Constructor = args.shift();
-  // 首先生成一个空白对象
-  const obj = {};
-  // 然后将原型链确定
-  obj.__proto__ = Constructor.prototype;
-  const ret = Constructor.apply(obj, args);
-  if (typeof ret === "object") {
-    return ret;
-  } else {
-    return obj;
-  }
+// https://juejin.cn/post/6917811484898623495
+
+function Person(name, sex) {
+  var obj = Object.create(Person.prototype); //手工指定原型
+  obj.name = name;
+  obj.sex = sex;
+  return obj;
 }
 
-const Fun = function (name) {
-  this.name = name;
-};
-Fun.prototype.getName = function () {
-  alert(this.name);
-};
-let fun = myNew(Fun, "gim");
-fun.getName(); // gim
+Person.prototype.introduce = function () {
+  console.log(`我是${this.name}，是个${this.sex}。`);
+}
 
-// https://juejin.cn/post/6917811484898623495
+Person("jian", "male").introduce();
+new Person("jian", "male").introduce();
