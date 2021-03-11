@@ -1,20 +1,10 @@
 // https://juejin.cn/post/6917811484898623495
 
-function throttle(f, wait = 2000) {
-  let last = 0;
-  return function (...args) {
-    let now = Date.now();
-    if (now - last > wait) {
-      f.apply(this, args);
-      last = now;
-    }
-  };
-}
+"nihao" instanceof String;
+String("nihao") instanceof String;
+new String("nihao") instanceof String;
 
-window.onscroll = throttle(function () {
-  console.log("this", this);
-});
+false instanceof Boolean;
+Boolean(false) instanceof Boolean;
+new Boolean(false) instanceof Boolean;
 
-ip.onkeyup = throttle(function () {
-  console.log("this", this);
-});
